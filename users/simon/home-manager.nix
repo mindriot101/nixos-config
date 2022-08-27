@@ -26,7 +26,6 @@ let sources = import ../../nix/sources.nix; in {
 
     pkgs.go
     pkgs.gopls
-    pkgs.zig-master
 
     pkgs.tlaplusToolbox
     pkgs.tetex
@@ -140,12 +139,8 @@ let sources = import ../../nix/sources.nix; in {
 
   programs.git = {
     enable = true;
-    userName = "Mitchell Hashimoto";
-    userEmail = "mitchell.hashimoto@gmail.com";
-    signing = {
-      key = "523D5DC389D273BC";
-      signByDefault = true;
-    };
+    userName = "Simon Walker";
+    userEmail = "s.r.walker101@googlemail.com";
     aliases = {
       prettylog = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(r) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
       root = "rev-parse --show-toplevel";
@@ -155,7 +150,7 @@ let sources = import ../../nix/sources.nix; in {
       color.ui = true;
       core.askPass = ""; # needs to be empty to use terminal for ask pass
       credential.helper = "store"; # want to make this more secure
-      github.user = "mitchellh";
+      github.user = "mindriot101";
       push.default = "tracking";
       init.defaultBranch = "main";
     };
@@ -164,7 +159,7 @@ let sources = import ../../nix/sources.nix; in {
   programs.go = {
     enable = true;
     goPath = "code/go";
-    goPrivate = [ "github.com/mitchellh" "github.com/hashicorp" "rfc822.mx" ];
+    # goPrivate = [ "github.com/mitchellh" "github.com/hashicorp" "rfc822.mx" ];
   };
 
   programs.tmux = {
